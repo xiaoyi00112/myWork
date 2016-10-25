@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html" charset="utf/8">
+    <title>黑客帝国瀑布</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background:yellow;
+        }
+        canvas{
+            display: block;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="C"></canvas>
+</body>
+<script>
+    var c=document.getElementById("C");
+    var ctx= c.getContext("2d");
+
+    c.height=window.innerHeight;
+    c.width=window.innerWidth;
+
+    var chinese="010101010101010";
+    chinese=chinese.split("");
+
+    var font_size=10;
+    var colums= c.width/font_size;
+    var drops=[];
+    for(var x=0;x<colums;x++){
+        drops[x]=1;
+    }
+
+    function draw(){
+        //每绘制一次，不透明的程度都会叠加。
+        ctx.fillStyle="rgba(0,0,0,0.1)";
+
+        ctx.fillRect(0,0, c.width, c.height);
+
+        ctx.fillStyle="#0F0";
+        ctx.font=font_size+"px arial";
+
+        for(var i=0;i<drops.length;i++){
+            var text=chinese[Math.floor( Math.random()*chinese.length)];
+            ctx.fillText(text,i*font_size,drops[i]*font_size);
+            ctx.fillText(text,drops[i]*font_size,i*font_size);
+           
+            if(drops[i]*font_size> c.width && drops[i]*font_size> c.height && Math.random()>0.975){
+                drops[i]=1;
+            }
+             drops[i]++;
+        }
+    }
+     setInterval(draw,50);
+</script>
+</html>

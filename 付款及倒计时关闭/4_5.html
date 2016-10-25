@@ -1,0 +1,43 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>倒计时自动关闭/跳转页面</title>
+<meta charset="utf-8" />
+<script>
+	//定义任务函数
+	function calc(){//计算每秒倒计时
+		//获得id为second的span元素，保存在变量span中
+		var span=document.getElementById("second");
+		//获取span的内容，转为整数，-1后，保存在n中
+		var n=parseInt(span.innerHTML)-1;
+		if(n>0){//如果n大于0
+		//	设置span的内容为n+原span内容的剩余部分
+			span.innerHTML=n+span.innerHTML.slice(1);
+		//	重新启动一次性定时器，传入calc函数对象和1000毫秒，将结果序号保存在全局timer变量中
+			timer=setTimeout(calc,1000);
+		}else{//否则
+			/*window.*/close();//关闭当前页面
+		}
+	}
+	var timer=null;
+	window.onload=function(){
+		//启动一次性定时器，传入calc函数对象和1000，将返回值保存在全局timer变量中
+		timer=setTimeout(calc,1000);
+		//找到id为stay的a元素，设置href属性为
+		//	"javascript:+停止一次性定时器，传入timer"
+		document.getElementById("stay").href=
+			"javascript:clearTimeout(timer)";
+	}
+	var now=new Date();
+		//获得小时，分，秒，分别保存在变量h，m，s中
+		var h=now.getHours();
+		var m=now.getMinutes();
+		var s=now.getSeconds();
+		console.log(s);
+</script>
+</head>
+<body>
+	<span id="second">5秒钟后自动关闭</span><br>
+	<a id="stay">留在本页</a>
+</body>
+</html>

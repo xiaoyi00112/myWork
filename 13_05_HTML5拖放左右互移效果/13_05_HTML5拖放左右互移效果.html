@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>HTML5拖放左右互移效果</title>
+  <style>
+	div {
+		width : 300px;
+		height : 300px;
+		border : 1px solid black;
+	}
+	#d1 {
+		float : left;
+	}
+	#d2 {
+		float : right;
+	}
+  </style>
+ </head>
+ <body>
+  <div id="d1">
+	<img id="img" src="Penguins.jpg" width="256">
+  </div>
+  <div id="d2"></div>
+  <script>
+	var d1 = document.getElementById("d1");
+	var d2 = document.getElementById("d2");
+	/*
+	   DOM节点树
+	   * 获取子节点 - firstChild lastChild childNodes
+	   DOM元素树
+	   * 获取子元素 - firstElementChild lastElementChild children
+	 */
+	var child1 = d1.firstElementChild;
+	if(child1){
+		// 从左到右的拖放效果
+		child1.ondragstart = start1;
+		d2.ondragover = over1;
+		d2.ondrop = drop1
+	}
+	function start1(event){
+		event.dataTransfer.setData("text",child1.src);
+	}
+	function over1(event){
+		event.preventDefault();
+	}
+	function drop1(event){
+		var src = event.dataTransfer.getData("text");
+		d2.innerHTML = "<img src='"+src+"' width='256'>";
+
+		child2 = d2.firstElementChild;
+
+		child2.ondragstart = start2;
+		d1.ondragover = over2;
+		d1.ondrop = drop2;
+
+		d1.removeChild(child1);
+	}
+
+	var child2 = d2.firstElementChild;
+	function start2(event){
+		event.dataTransfer.setData("text",child2.src);
+	}
+	function over2(event){
+		event.preventDefault();
+	}
+	function drop2(event){
+		var src = event.dataTransfer.getData("text");
+		d1.innerHTML = "<img src='"+src+"' width='256'>";
+		
+		child1 = d1.firstElementChild;
+
+		child1.ondragstart = start1;
+		d2.ondragover = over1;
+		d2.ondrop = drop1;
+
+		d2.removeChild(child2);
+	}
+  </script>
+ </body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+ <head>
+	<meta charset="UTF-8">
+	<title>字符串颠倒输出</title>
+	<script>
+	window.onload=function(){
+		function NumToUn(){
+			// alert("hello");
+
+		//颠倒输出
+		var str="abcdefg";
+		console.log(str);
+		var arr=str.split("");
+		var string=arr.reverse().join("");
+		console.log(string);
+		};
+		/*//加换行
+		alert("xxx\nyyy");
+		//颠倒输出
+		var str="abcdefg";
+		var arr=str.split("");
+		var string=arr.reverse().join("");
+		console.log(string);
+		*/
+		var btn=document.getElementById("In");
+		// console.log(btn);
+		btn.addEventListener("click",NumToUn);
+	}
+		
+
+	</script>  
+	</script>
+ </head>
+ <body>
+	<input id="In" type="button" value="点我">
+ </body>
+</html>
