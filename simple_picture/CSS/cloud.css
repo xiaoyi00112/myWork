@@ -1,0 +1,158 @@
+#canvas {
+  height: 600px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 19px;
+  overflow:hidden;
+
+}
+#canvas div {
+  position: absolute;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -ms-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+#canvas:target div:not(.overlay) {
+  border: 1px solid black;
+}
+.sky div {
+  background-repeat: no-repeat;
+  -webkit-animation-name: prop-1200;
+  -moz-animation-name: prop-1200;
+  -ms-animation-name: prop-1200;
+  -o-animation-name: prop-1200;
+  animation-name: prop-1200;
+}
+
+.cloud-1, .cloud-2 {
+  width: 82px; height: 90px;
+  background-image: url(../img/1.png);
+  -webkit-animation-duration: 120s;
+  -moz-animation-duration: 120s;
+  -ms-animation-duration: 120s;
+  -o-animation-duration: 120s;
+  animation-duration: 120s;
+}
+
+.cloud-3, .cloud-4 {
+  top: 70px;
+  width: 159px; height: 90px;
+  background-image: url(../img/2.png);
+  -webkit-animation-duration: 80s;
+  -moz-animation-duration: 80s;
+  -ms-animation-duration: 80s;
+  -o-animation-duration: 80s;
+  animation-duration: 80s;
+}
+
+.cloud-5, .cloud-6 {
+  top: 30px;
+  width: 287px; height: 62px;
+  background-image: url(../img/3.png);
+  -webkit-animation-duration: 140s;
+  -moz-animation-duration: 140s;
+  -ms-animation-duration: 140s;
+  -o-animation-duration: 140s;
+  animation-duration: 140s;
+}
+
+.cloud-7, .cloud-8 {
+  top: 100px;
+  width: 94px; height: 81px;
+  background-image: url(../img/4.png);
+  -webkit-animation-duration: 90s;
+  -moz-animation-duration: 90s;
+  -ms-animation-duration: 90s;
+  -o-animation-duration: 90s;
+  animation-duration: 90s;
+}
+
+.cloud-1 { left: 0px; }
+.cloud-2 { left: 1200px; }
+
+.cloud-3 { left: 250px; }
+.cloud-4 { left: 1450px; }
+
+.cloud-5 { left: 500px; }
+.cloud-6 { left: 1700px; }
+
+.cloud-7 { left: 950px; }
+.cloud-8 { left: 2150px; }
+
+.horizon1 {
+  top: 350px;
+  width: 1800px; height: 50px;
+  background: url(../img/horizon.png) repeat-x;
+  -webkit-animation-name: prop-600;
+  -moz-animation-name: prop-600;
+  -ms-animation-name: prop-600;
+  -o-animation-name: prop-600;
+  animation-name: prop-600;
+  -webkit-animation-duration: 40s;
+  -moz-animation-duration: 40s;
+  -ms-animation-duration: 40s;
+  -o-animation-duration: 40s;
+  animation-duration: 40s;
+}
+.horizon2 {
+  top: 500px;
+  width: 1800px; height: 50px;
+  background: url(../img/horizon.png) repeat-x;
+  -webkit-animation-name: prop-600;
+  -moz-animation-name: prop-600;
+  -ms-animation-name: prop-600;
+  -o-animation-name: prop-600;
+  animation-name: prop-600;
+  -webkit-animation-duration: 40s;
+  -moz-animation-duration: 40s;
+  -ms-animation-duration: 40s;
+  -o-animation-duration: 40s;
+  animation-duration: 40s;
+}
+.ground div {
+  background-repeat: no-repeat;
+  -webkit-animation-name: prop-2000;
+  -moz-animation-name: prop-2000;
+  -ms-animation-name: prop-2000;
+  -o-animation-name: prop-2000;
+  animation-name: prop-2000;
+}
+@-webkit-keyframes prop-600 {
+  0%   { -webkit-transform: translateX(0px); }
+  100% { -webkit-transform: translateX(-600px); }
+}
+
+@-webkit-keyframes prop-1200 {
+  0%   { -webkit-transform: translateX(0px); }
+  100% { -webkit-transform: translateX(-1200px); }
+}
+
+@-webkit-keyframes prop-2000 {
+  0%   { -webkit-transform: translateX(0px); }
+  100% { -webkit-transform: translateX(-2000px); }
+}
+/*火狐兼容*/
+@-moz-keyframes prop-600 {
+  0%   { -moz-transform: translateX(0px); }
+  100% { -moz-transform: translateX(-600px); }
+}
+
+@-moz-keyframes prop-1200 {
+  0%   { -moz-transform: translateX(0px); }
+  100% { -moz-transform: translateX(-1200px); }
+}
+
+@-moz-keyframes prop-2000 {
+  0%   { -moz-transform: translateX(0px); }
+  100% { -moz-transform: translateX(-2000px); }
+}

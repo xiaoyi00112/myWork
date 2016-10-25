@@ -1,0 +1,321 @@
+@charset "utf-8";
+*{margin: 0;
+	padding: 0;
+	border:none;
+}
+body{
+	min-width:810px;
+}
+ul,li,ol{
+	list-style:none;
+}
+.bdsy{
+	position: relative;
+	height:100%;
+	min-height: 500px
+}
+/*清除浮动*/
+.clrfix{
+	zoom:1;
+}
+.clrfix:after{
+	display:table;
+	line-height: 0;
+	content: "";
+	clear:both;
+}
+/*导航栏*/
+.topBar{
+	padding-top:20px;
+}
+.topBar>ul{
+	float: right;
+	margin-right:10px;
+}
+.topBar>ul>li{
+	float: left;
+	font: 13px arial;
+	margin-right: 20px;
+	position:relative;
+}
+.topBar>ul>li>a{
+	font-weight: 600;
+	color:black;
+	color:#333;
+	line-height:24px;
+}
+.topBar>ul>li>a:hover{
+	color:#000fff;
+}
+
+.topBar .login{
+	font-weight:normal;
+}
+/*用户设置*/
+.topBar .userS{
+	font-weight:normal;
+}
+.topBar .bdnuarrow i,em{
+	display:block;
+	width:0;
+	height:0;
+	position:absolute;
+}
+.topBar .bdnuarrow em{
+	border:4px solid transparent;
+	border-bottom-color:white;
+	top:-8px;
+	left:31px;
+}
+.topBar .bdnuarrow i{
+	border:5px solid transparent;
+	border-bottom-color: #b8b8b8;
+	top:-10px;
+	left:30px;
+}
+.topBar .userSetting{
+	display:none;
+	width:70px;
+	border: 1px solid #d1d1d1;
+	position:absolute;
+	left:-20px;
+	z-index: 20;/*不设置的话，div里的a标签就无法点击*/
+	margin-top:2px;
+	box-shadow:0 0 0 3px #eee;
+}
+.topBar .userSetting a{
+	display:block;
+	width: 52px;
+	height: 26px;
+	padding: 0 9px 0 9px;
+	text-decoration: none;
+	/*vertical-align:middle;只有拥有vertical属性的元素才有效果，例如table，没有vertical属性的元素设置vertical-align没有效果*/
+	line-height:26px;/*使字体居中*/
+	color:#333;
+}
+.topBar .userSetting a:hover{
+	background-color:#38f;
+	color:white;
+}
+/*更多产品*/
+.topBar .moreP{
+	margin-right:0;
+	margin-left:5px;
+	text-align:center;
+}
+.topBar .moreP a{
+	display:inline-block;
+	width:60px;
+	height:23px;
+	font-weight: normal;
+	color: white;
+	background-color:#38f;
+	text-decoration:none;
+}
+.moreProduction{
+	display:none;
+	width:85px;
+	min-height:600px;
+	font-size: 13px;
+	border-left:1px solid #e7e7e7;
+	background-color:#f9f9f9;
+	overflow:hidden;
+	position:absolute;
+	top:0;
+	right:0;
+	z-index:2;
+}
+.moreProduction .mp1{
+	border-bottom:1px solid #f0f0f0;
+	width: 66px;
+	height: 43px;
+	padding-top:9px;
+	margin: 0 auto;
+	line-height:43px;
+	text-align:center;
+}
+.mp2>a{
+	display:block;
+	width:66px;
+	height:76px;
+	color:#666;
+	text-decoration:none;
+	margin:0 auto;
+	text-align:center;
+	border-bottom:1px solid #f0f0f0;
+}
+.mp2>a:hover{
+	text-decoration:underline;
+}
+.mp2>a>span{
+	display:block;
+	height:36px;
+	margin:10px auto 5px;
+}
+.mpMusic{
+	width:40px;
+	background:url(../img/bdbri_icons_2e35e84b.png) no-repeat -72px 0;
+}
+.mpPicture{
+	width:36px;
+	background:url(../img/bdbri_icons_2e35e84b.png) no-repeat -112px 0;
+}
+.mpKnow{
+	width:36px;
+	background:url(../img/bdbri_icons_2e35e84b.png) no-repeat -36px 0;
+}
+.mpLibrary{
+	width:36px;
+	background:url(../img/bdbri_icons_2e35e84b.png) no-repeat -147px 0;
+}
+.mpRanking{
+	width:36px;
+	background:url(../img/bdbri_icons_2e35e84b.png) no-repeat -184px 0;
+}
+.mp3>a{
+	display:block;
+	color:#666;
+	width:85px;
+	height:30px;
+	margin-top:15px;
+	text-align:center;
+}
+/*搜索框*/
+.mainBox{
+	text-align: center;
+	position:relative;
+	margin-top:20px;
+}
+.bdLogo img{
+	width:270px;
+	height:129px;
+	margin-bottom:10px;
+}
+.searchBox{
+	width:650px;
+	margin:12px auto 0;
+	height:34px;
+	border:1px solid #bbb;
+}
+.searchBox input{
+	float:left;
+}
+.searchBox #searchInput{
+	width:513px;
+	height:32px;
+	padding-left:10px;
+	border:1px solid #b6b6b6;
+	font-size:15px;
+	border:0;
+	outline:none;
+}
+.searchBox #searchCamera{
+	display: block;
+	float:left;
+	width: 18px;
+	height: 16px;
+	background: url(../img/camera_new_679c15cc.png) no-repeat;
+	margin-top: 11px;
+	cursor:pointer;
+}
+.searchBox #searchButton{
+	width: 100px;
+	height:36px;
+	float:right;
+	font-size:15px;
+	color: #fff;
+	background-color: #3385ff;
+	border: 0;
+	padding:0;
+	cursor:pointer;
+}
+/*底部*/
+.bottomBar{
+	width:810px;
+	height: 50px;
+	margin:280px auto 0;
+
+}
+
+/*手机百度二维码*/
+.bottomBar .phoneBd{
+	float: left;
+	margin-left: 80px;
+}
+.bottomBar .phoneBd .qrcodeImg{
+	background:url(../img/zbios_62c636fe.png) 0 0 no-repeat;
+	height: 60px;
+	width:60px;
+	display: block;
+	float:left;
+}
+.bottomBar .phoneBd p{
+	margin-top: 10px;
+	margin-left:8px;
+	float:left;
+	font:12px arial;
+	line-height:22px;
+}
+.bottomBar .phoneBd p b{
+	color:#666;
+}
+.bottomBar .phoneBd p span{
+	color:#999;
+}
+/*百度糯米二维码*/
+.bottomBar .bdNuomi{
+	float:left;
+	margin-left: 50px;
+}
+.bottomBar .bdNuomi .qrcodeImg{
+	background:url(../img/nuomi_510f7472.png) 0 0 no-repeat;
+	height: 60px;
+	width:60px;
+	display: block;
+	float:left;
+}
+.bottomBar .bdNuomi p{
+	margin-top: 10px;
+	margin-left:8px;
+	float:left;
+	font:12px arial;
+	line-height:22px;
+}
+.bottomBar .bdNuomi p b{
+	color:#666;
+}
+.bottomBar .bdNuomi p span{
+	color:#999;
+}
+/*百度底部信息*/
+.bottomBar .bdMessage{
+	float: left;
+	margin-left:20px;
+	font:12px arial;
+	line-height:22px;
+	color:#999;
+}
+.bottomBar .bdMessage .aboutBd>a{
+	margin-left:25px;
+
+}
+.bottomBar .bdMessage p>a{
+	margin-left: 5px;
+}
+.bottomBar .bdMessage p a{
+	color: #999;
+}
+.bottomBar .bdMessage .ipcLogo{
+	display:inline-block;
+	width: 14px;
+	height: 17px;
+	background:url(../img/icons_0e814c16.png) no-repeat -600px -97px;
+	vertical-align: middle;
+}
+.bottomBar .bdMessage .policePic{
+	display:inline-block;
+	width: 14px;
+	height: 17px;
+	background:url(../img/icons_0e814c16.png) no-repeat -623px -97px;
+	vertical-align: middle;
+}
